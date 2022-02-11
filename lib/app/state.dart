@@ -124,20 +124,20 @@ class PronounceState extends State<PronouncePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(howManyWords.toString() + " words"),
+                Text(howManyWords.toString() + " words", style: TextStyle(fontSize: 25),),
                 const Icon(CupertinoIcons.down_arrow),
               ]
             )
           ),
-          const Text("You need to pronounce"),
-          Text(currentWord ?? "no word", style: const TextStyle(fontSize: 30, color: CupertinoColors.systemYellow), textAlign: TextAlign.center),
-          const Text("You pronounced"),
-          Text((spelledWord ?? "no word").toLowerCase(), style: TextStyle(fontSize: 30, color: spelledColor), textAlign: TextAlign.center),
+          const Text("You need to pronounce", style: TextStyle(fontSize: 35),),
+          Text(currentWord ?? "no word", style: const TextStyle(fontSize: 45, color: CupertinoColors.systemYellow), textAlign: TextAlign.center),
+          const Text("You pronounced", style: TextStyle(fontSize: 35)),
+          Text((spelledWord ?? "no word").toLowerCase(), style: TextStyle(fontSize: 45, color: spelledColor), textAlign: TextAlign.center),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CupertinoButton(
-                  child: Text(speech.isListening ? "Speaking..." : "Speak",),
+                  child: Text(speech.isListening ? "Speaking..." : "Speak", style: TextStyle(fontSize: 25)),
                   onPressed: () {
                     if (speech.isListening) {
                       speech.stop();
@@ -146,7 +146,7 @@ class PronounceState extends State<PronouncePage> {
                     speak();
                   }),
               CupertinoButton(
-                  child: const Text("Next"),
+                  child: const Text("Next", style: TextStyle(fontSize: 25)),
                   onPressed: () {
                     chooseWord();
                   }),
